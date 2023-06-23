@@ -1,3 +1,4 @@
+import os
 import subprocess
 import time
 import simpleaudio as sa
@@ -9,8 +10,7 @@ import speaker
 
 fake_stdout = io.StringIO()
 
-with open('api_token.txt', 'r') as f:
-    api_key = f.read().rstrip('\n')
+api_key = os.environ['OPENAI_API_KEY']
 
 openai.api_key = api_key 
 
